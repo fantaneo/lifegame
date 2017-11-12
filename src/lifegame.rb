@@ -1,16 +1,21 @@
 class LifeGame
   # attr_accessor :@cells
   def initialize
-    @cells = []
-    for i in 0..4 do
-      @cells << []
-      for j in 0..4 do
-        @cells[i] << '□'
-      end
-    end
+    setup
     @cells[2][1] = '■'
     @cells[2][2] = '■'
     @cells[2][3] = '■'
+  end
+
+  # Cellsの初期化
+  def setup
+    @cells = []
+    5.times do |i|
+      @cells << []
+      5.times do
+        @cells[i] << '□'
+      end
+    end
   end
 
   def output
