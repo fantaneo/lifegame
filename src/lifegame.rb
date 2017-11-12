@@ -30,7 +30,7 @@ class LifeGame
     lines.join("\n")
   end
 
-  def next_content
+  def create_next_step
     bb = [[],[],[],[],[]]
     for i in 0..4 do
       for j in 0..4 do
@@ -77,7 +77,7 @@ class LifeGame
     yield content
 
     for times in 0..2
-      next_content
+      create_next_step
 
       yield "#{times}=========="
       yield content
