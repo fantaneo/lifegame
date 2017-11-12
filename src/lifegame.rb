@@ -30,7 +30,7 @@ class LifeGame
     lines.join("\n")
   end
 
-  def next_cells
+  def next_content
     bb = [[],[],[],[],[]]
     for i in 0..4 do
       for j in 0..4 do
@@ -69,7 +69,7 @@ class LifeGame
         end
       end
     end
-    bb
+    @cells = bb
   end
 
   def output
@@ -77,16 +77,10 @@ class LifeGame
     yield content
 
     for times in 0..2
-      @cells = next_cells
+      next_content
 
       yield "#{times}=========="
-      for i in 0..4 do
-        line = ''
-        for j in 0..4 do
-          line += @cells[i][j]
-        end
-        yield line
-      end
+      yield content
     end
   end
 end

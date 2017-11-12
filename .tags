@@ -9,5 +9,5 @@ LifeGame	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^class L
 initialize	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def initialize$/;"	method	line:3	class:LifeGame
 setup	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def setup$/;"	method	line:11	class:LifeGame
 content	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def content$/;"	method	line:21	class:LifeGame
-next_cells	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def next_cells$/;"	method	line:33	class:LifeGame.content
-output	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def output$/;"	method	line:75	class:LifeGame.content.next_cells
+next_content	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def next_content$/;"	method	line:33	class:LifeGame.content
+output	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def output$/;"	method	line:75	class:LifeGame.content.next_content
