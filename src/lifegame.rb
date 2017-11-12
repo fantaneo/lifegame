@@ -1,21 +1,23 @@
 class LifeGame
-  def output
-    b = []
+  # attr_accessor :@cells
+  def initialize
+    @cells = []
     for i in 0..4 do
-      b << []
+      @cells << []
       for j in 0..4 do
-        b[i] << '□'
+        @cells[i] << '□'
       end
     end
+    @cells[2][1] = '■'
+    @cells[2][2] = '■'
+    @cells[2][3] = '■'
+  end
 
-    b[2][1] = '■'
-    b[2][2] = '■'
-    b[2][3] = '■'
-
+  def output
     for i in 0..4 do
       line = ''
       for j in 0..4 do
-        line += b[i][j]
+        line += @cells[i][j]
       end
       yield line
     end
@@ -26,17 +28,17 @@ class LifeGame
         for j in 0..4 do
           count = 0
 
-          if b[i][j] == '□'
+          if @cells[i][j] == '□'
             # 誕生の場合
             count = 0
-            if b[i-1][j-1] == '■'; count += 1 end
-            if b[i-1][j] == '■'; count += 1 end
-            if b[i-1][j+1] == '■'; count += 1 end
-            if b[i][j-1] == '■'; count += 1 end
-            if b[i][j+1] == '■'; count += 1 end
-            if i < 4 && b[i+1][j-1] == '■'; count += 1 end
-            if i < 4 && b[i+1][j] == '■'; count += 1 end
-            if i < 4 && b[i+1][j+1] == '■'; count += 1 end
+            if @cells[i-1][j-1] == '■'; count += 1 end
+            if @cells[i-1][j] == '■'; count += 1 end
+            if @cells[i-1][j+1] == '■'; count += 1 end
+            if @cells[i][j-1] == '■'; count += 1 end
+            if @cells[i][j+1] == '■'; count += 1 end
+            if i < 4 && @cells[i+1][j-1] == '■'; count += 1 end
+            if i < 4 && @cells[i+1][j] == '■'; count += 1 end
+            if i < 4 && @cells[i+1][j+1] == '■'; count += 1 end
             if count >= 3
               bb[i][j] = '■'
             else
@@ -44,27 +46,27 @@ class LifeGame
             end
           end
 
-          if b[i][j] == '■'
+          if @cells[i][j] == '■'
             # 生存・過疎・過密の場合
             count = 0
-            if b[i-1][j] == '■'; count += 1 end
-            if b[i][j-1] == '■'; count += 1 end
-            if b[i][j+1] == '■'; count += 1 end
-            if b[i+1][j] == '■'; count += 1 end
+            if @cells[i-1][j] == '■'; count += 1 end
+            if @cells[i][j-1] == '■'; count += 1 end
+            if @cells[i][j+1] == '■'; count += 1 end
+            if @cells[i+1][j] == '■'; count += 1 end
             if count == 2
-              bb[i][j] = b[i][j]
+              bb[i][j] = @cells[i][j]
             else
               bb[i][j] = '□'
             end
           end
         end
       end
-      b = bb
+      @cells = bb
       yield "#{times}=========="
       for i in 0..4 do
         line = ''
         for j in 0..4 do
-          line += b[i][j]
+          line += @cells[i][j]
         end
         yield line
       end

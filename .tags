@@ -6,4 +6,5 @@ valid_positive_number?	/Users/fantaneo/Developments/ruby/tdd/lesson1/src/sample.
 PositiveNumberError	/Users/fantaneo/Developments/ruby/tdd/lesson1/src/sample.rb	/^  class PositiveNumberError < StandardError; end$/;"	class	line:29	class:Semver
 lifegame	/Users/fantaneo/Developments/ruby/tdd/lesson2/lifegame.rb	/^def lifegame$/;"	method	line:1
 LifeGame	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^class LifeGame$/;"	class	line:1
-output	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def output$/;"	method	line:2	class:LifeGame
+initialize	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def initialize$/;"	method	line:3	class:LifeGame
+output	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def output$/;"	method	line:16	class:LifeGame.initialize
