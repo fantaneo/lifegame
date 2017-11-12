@@ -5,4 +5,5 @@ to_s	/Users/fantaneo/Developments/ruby/tdd/lesson1/src/sample.rb	/^  def to_s$/;
 valid_positive_number?	/Users/fantaneo/Developments/ruby/tdd/lesson1/src/sample.rb	/^  def valid_positive_number?(number)$/;"	method	line:25	class:Semver
 PositiveNumberError	/Users/fantaneo/Developments/ruby/tdd/lesson1/src/sample.rb	/^  class PositiveNumberError < StandardError; end$/;"	class	line:29	class:Semver
 lifegame	/Users/fantaneo/Developments/ruby/tdd/lesson2/lifegame.rb	/^def lifegame$/;"	method	line:1
-lifegame	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^def lifegame$/;"	method	line:1
+LifeGame	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^class LifeGame$/;"	class	line:1
+output	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def output$/;"	method	line:2	class:LifeGame
