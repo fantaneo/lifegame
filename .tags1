@@ -4,3 +4,8 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+LifeGame	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^class LifeGame$/;"	class	line:1
+initialize	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def initialize$/;"	method	line:3	class:LifeGame
+setup	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def setup$/;"	method	line:11	class:LifeGame
+to_s	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def to_s$/;"	method	line:21	class:LifeGame
+output	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def output$/;"	method	line:33	class:LifeGame.to_s

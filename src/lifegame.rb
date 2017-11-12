@@ -18,14 +18,21 @@ class LifeGame
     end
   end
 
-  def output
+  def to_s
+    lines = []
     for i in 0..4 do
       line = ''
       for j in 0..4 do
         line += @cells[i][j]
       end
-      yield line
+      lines << line
     end
+    lines.join("\n")
+  end
+
+  def output
+
+    yield to_s
 
     for times in 0..2
       bb = [[],[],[],[],[]]
