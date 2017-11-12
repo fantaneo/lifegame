@@ -18,7 +18,7 @@ class LifeGame
     end
   end
 
-  def to_s
+  def content
     lines = []
     for i in 0..4 do
       line = ''
@@ -30,50 +30,55 @@ class LifeGame
     lines.join("\n")
   end
 
-  def output
+  def next_cells
+    bb = [[],[],[],[],[]]
+    for i in 0..4 do
+      for j in 0..4 do
+        count = 0
 
-    yield to_s
-
-    for times in 0..2
-      bb = [[],[],[],[],[]]
-      for i in 0..4 do
-        for j in 0..4 do
+        if @cells[i][j] == '□'
+          # 誕生の場合
           count = 0
-
-          if @cells[i][j] == '□'
-            # 誕生の場合
-            count = 0
-            if @cells[i-1][j-1] == '■'; count += 1 end
-            if @cells[i-1][j] == '■'; count += 1 end
-            if @cells[i-1][j+1] == '■'; count += 1 end
-            if @cells[i][j-1] == '■'; count += 1 end
-            if @cells[i][j+1] == '■'; count += 1 end
-            if i < 4 && @cells[i+1][j-1] == '■'; count += 1 end
-            if i < 4 && @cells[i+1][j] == '■'; count += 1 end
-            if i < 4 && @cells[i+1][j+1] == '■'; count += 1 end
-            if count >= 3
-              bb[i][j] = '■'
-            else
-              bb[i][j] = '□'
-            end
+          if @cells[i-1][j-1] == '■'; count += 1 end
+          if @cells[i-1][j] == '■'; count += 1 end
+          if @cells[i-1][j+1] == '■'; count += 1 end
+          if @cells[i][j-1] == '■'; count += 1 end
+          if @cells[i][j+1] == '■'; count += 1 end
+          if i < 4 && @cells[i+1][j-1] == '■'; count += 1 end
+          if i < 4 && @cells[i+1][j] == '■'; count += 1 end
+          if i < 4 && @cells[i+1][j+1] == '■'; count += 1 end
+          if count >= 3
+            bb[i][j] = '■'
+          else
+            bb[i][j] = '□'
           end
+        end
 
-          if @cells[i][j] == '■'
-            # 生存・過疎・過密の場合
-            count = 0
-            if @cells[i-1][j] == '■'; count += 1 end
-            if @cells[i][j-1] == '■'; count += 1 end
-            if @cells[i][j+1] == '■'; count += 1 end
-            if @cells[i+1][j] == '■'; count += 1 end
-            if count == 2
-              bb[i][j] = @cells[i][j]
-            else
-              bb[i][j] = '□'
-            end
+        if @cells[i][j] == '■'
+          # 生存・過疎・過密の場合
+          count = 0
+          if @cells[i-1][j] == '■'; count += 1 end
+          if @cells[i][j-1] == '■'; count += 1 end
+          if @cells[i][j+1] == '■'; count += 1 end
+          if @cells[i+1][j] == '■'; count += 1 end
+          if count == 2
+            bb[i][j] = @cells[i][j]
+          else
+            bb[i][j] = '□'
           end
         end
       end
-      @cells = bb
+    end
+    bb
+  end
+
+  def output
+
+    yield content
+
+    for times in 0..2
+      @cells = next_cells
+
       yield "#{times}=========="
       for i in 0..4 do
         line = ''
