@@ -2,9 +2,9 @@ class LifeGame
   # attr_accessor :@cells
   def initialize
     setup
-    @cells[2][1] = '■'
-    @cells[2][2] = '■'
-    @cells[2][3] = '■'
+    @cells[2][1] = true
+    @cells[2][2] = true
+    @cells[2][3] = true
   end
 
   # Cellsの初期化
@@ -13,7 +13,7 @@ class LifeGame
     5.times do |i|
       @cells << []
       5.times do
-        @cells[i] << '□'
+        @cells[i] << false
       end
     end
   end
@@ -23,7 +23,7 @@ class LifeGame
     for i in 0..4 do
       line = ''
       for j in 0..4 do
-        line += @cells[i][j]
+        line += @cells[i][j] ? '■' : '□'
       end
       lines << line
     end
@@ -36,35 +36,35 @@ class LifeGame
       for j in 0..4 do
         count = 0
 
-        if @cells[i][j] == '□'
+        if @cells[i][j] == false
           # 誕生の場合
           count = 0
-          if @cells[i-1][j-1] == '■'; count += 1 end
-          if @cells[i-1][j] == '■'; count += 1 end
-          if @cells[i-1][j+1] == '■'; count += 1 end
-          if @cells[i][j-1] == '■'; count += 1 end
-          if @cells[i][j+1] == '■'; count += 1 end
-          if i < 4 && @cells[i+1][j-1] == '■'; count += 1 end
-          if i < 4 && @cells[i+1][j] == '■'; count += 1 end
-          if i < 4 && @cells[i+1][j+1] == '■'; count += 1 end
+          if @cells[i-1][j-1] == true; count += 1 end
+          if @cells[i-1][j] == true; count += 1 end
+          if @cells[i-1][j+1] == true; count += 1 end
+          if @cells[i][j-1] == true; count += 1 end
+          if @cells[i][j+1] == true; count += 1 end
+          if i < 4 && @cells[i+1][j-1] == true; count += 1 end
+          if i < 4 && @cells[i+1][j] == true; count += 1 end
+          if i < 4 && @cells[i+1][j+1] == true; count += 1 end
           if count >= 3
-            bb[i][j] = '■'
+            bb[i][j] = true
           else
-            bb[i][j] = '□'
+            bb[i][j] = false
           end
         end
 
-        if @cells[i][j] == '■'
+        if @cells[i][j] == true
           # 生存・過疎・過密の場合
           count = 0
-          if @cells[i-1][j] == '■'; count += 1 end
-          if @cells[i][j-1] == '■'; count += 1 end
-          if @cells[i][j+1] == '■'; count += 1 end
-          if @cells[i+1][j] == '■'; count += 1 end
+          if @cells[i-1][j] == true; count += 1 end
+          if @cells[i][j-1] == true; count += 1 end
+          if @cells[i][j+1] == true; count += 1 end
+          if @cells[i+1][j] == true; count += 1 end
           if count == 2
             bb[i][j] = @cells[i][j]
           else
-            bb[i][j] = '□'
+            bb[i][j] = false
           end
         end
       end
