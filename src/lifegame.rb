@@ -16,7 +16,7 @@ def lifegame
     for j in 0..4 do
       line += b[i][j]
     end
-    puts line
+    yield line
   end
 
   for times in 0..2
@@ -59,13 +59,13 @@ def lifegame
       end
     end
     b = bb
-    puts "#{times}=========="
+    yield "#{times}=========="
     for i in 0..4 do
       line = ''
       for j in 0..4 do
         line += b[i][j]
       end
-      puts line
+      yield line
     end
   end
 end

@@ -1,3 +1,5 @@
 require_relative("lifegame.rb")
 
-lifegame
+lifegame do |line|
+  puts line
+end
