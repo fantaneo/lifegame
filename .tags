@@ -6,8 +6,8 @@ valid_positive_number?	/Users/fantaneo/Developments/ruby/tdd/lesson1/src/sample.
 PositiveNumberError	/Users/fantaneo/Developments/ruby/tdd/lesson1/src/sample.rb	/^  class PositiveNumberError < StandardError; end$/;"	class	line:29	class:Semver
 lifegame	/Users/fantaneo/Developments/ruby/tdd/lesson2/lifegame.rb	/^def lifegame$/;"	method	line:1
 LifeGame	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^class LifeGame$/;"	class	line:1
-initialize	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def initialize$/;"	method	line:3	class:LifeGame
-setup	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def setup$/;"	method	line:11	class:LifeGame
-content	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def content$/;"	method	line:21	class:LifeGame
-create_next_step	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def create_next_step$/;"	method	line:33	class:LifeGame.content
-output	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def output$/;"	method	line:75	class:LifeGame.content.create_next_step
+initialize	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def initialize$/;"	method	line:4	class:LifeGame
+setup	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def setup$/;"	method	line:12	class:LifeGame
+content	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def content$/;"	method	line:22	class:LifeGame
+create_next_step	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def create_next_step$/;"	method	line:34	class:LifeGame.content
+output	/Users/fantaneo/Developments/ruby/tdd/lesson2/src/lifegame.rb	/^  def output$/;"	method	line:76	class:LifeGame.content.create_next_step

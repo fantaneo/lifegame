@@ -1,5 +1,6 @@
 class LifeGame
-  # attr_accessor :@cells
+  attr_reader :cells
+
   def initialize
     setup
     @cells[2][1] = true
