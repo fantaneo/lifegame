@@ -1,0 +1,6 @@
+Semver	/Users/fantaneo/Developments/ruby/tdd/lesson1/src/sample.rb	/^class Semver$/;"	class	line:1
+initialize	/Users/fantaneo/Developments/ruby/tdd/lesson1/src/sample.rb	/^  def initialize(major: 0, minor: 0, patch: 0)$/;"	method	line:4	class:Semver
+to_s	/Users/fantaneo/Developments/ruby/tdd/lesson1/src/sample.rb	/^  def to_s$/;"	method	line:14	class:Semver
+==	/Users/fantaneo/Developments/ruby/tdd/lesson1/src/sample.rb	/^  def == (version)$/;"	method	line:18	class:Semver
+valid_positive_number?	/Users/fantaneo/Developments/ruby/tdd/lesson1/src/sample.rb	/^  def valid_positive_number?(number)$/;"	method	line:25	class:Semver
+PositiveNumberError	/Users/fantaneo/Developments/ruby/tdd/lesson1/src/sample.rb	/^  class PositiveNumberError < StandardError; end$/;"	class	line:29	class:Semver
