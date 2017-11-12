@@ -1,21 +1,17 @@
 class LifeGame
   attr_reader :cells
 
-  def initialize
-    setup
-    @cells[2][1] = true
-    @cells[2][2] = true
-    @cells[2][3] = true
-  end
-
-  # Cellsの初期化
-  def setup
+  def initialize(living_cells = [])
     @cells = []
     5.times do |i|
       @cells << []
       5.times do
         @cells[i] << false
       end
+    end
+
+    living_cells.each do |living_cell|
+      @cells[living_cell[:y] - 1][living_cell[:x] - 1] = true
     end
   end
 
@@ -74,6 +70,9 @@ class LifeGame
   end
 
   def output
+    @cells[2][1] = true
+    @cells[2][2] = true
+    @cells[2][3] = true
 
     yield content
 

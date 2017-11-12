@@ -26,6 +26,27 @@ RSpec.describe "LifeGame" do
     end
 
     it "すべての要素がfalseであること" do
+      lifegame = LifeGame.new
+      5.times do |i|
+        5.times do |j|
+          expect(lifegame.cells[i][j]).to eq false
+        end
+      end
+    end
+
+    it "ブリンカーで生成する" do
+      living_cells = [{ x: 2, y: 3 }, { x: 3, y: 3 }, { x: 4, y: 3 }]
+      lifegame = LifeGame.new(living_cells)
+      results = [
+        [false, false, false, false, false],
+        [false, false, false, false, false],
+        [false, true, true, true, false],
+        [false, false, false, false, false],
+        [false, false, false, false, false],
+      ]
+      lifegame.cells.each_with_index do |cells, i|
+        expect(cells == results[i]).to be_truthy
+      end
     end
   end
 end
